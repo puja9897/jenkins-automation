@@ -27,7 +27,7 @@ pipeline {
         stage('Publish Reports') {
             steps {
                 echo 'Publishing TestNG test results...'
-                junit 'test-output/testng-results.xml'  // TestNG creates this XML file
+                testng 'test-output/testng-results.xml'  // TestNG creates this XML file
             }
         }
     }

@@ -24,23 +24,5 @@ pipeline {
             }
         }
 
-        stage('Publish Reports') {
-            steps {
-                echo 'Publishing TestNG test results...'
-                testng 'test-output/testng-results.xml'  // TestNG creates this XML file
-            }
-        }
-    }
 
-    post {
-        success {
-            echo '✅ Build and tests succeeded!'
-        }
-        failure {
-            echo '❌ Build or tests failed.'
-        }
-        always {
-            echo '🎯 Pipeline finished.'
-        }
-    }
 }
